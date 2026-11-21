@@ -1,0 +1,16 @@
+import { createServer, IncomingMessage, ServerResponse } from "http";
+import routeHandler from "./routes/route";
+import productController from "./controllers/product.controller";
+import config from "./config";
+
+
+
+const server = createServer((req: IncomingMessage, res: ServerResponse) => {
+
+    routeHandler(req, res)
+
+
+});
+server.listen(config.port, () => {
+  console.log("Server is running successfully!!");
+});
